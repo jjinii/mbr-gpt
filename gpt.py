@@ -3,9 +3,11 @@ import struct
 
 def Drivepartition(pt) :
     start = struct.unpack("<Q",pt[32:32+8])
-    #num = struct.unpack('<L', pt[12:12+4])
+    last = struct.unpack("<Q", pt[40:40+8])
+   
 
     print '[GPT Partition] 시작위치 : %10d  ' % (start)
+    print '                끝위치 : %10d  ' % (last)
     print '                크기 : 20 MB'
 
 if __name__ == '__main__' :
